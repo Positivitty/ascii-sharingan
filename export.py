@@ -12,13 +12,13 @@ from PIL import Image, ImageDraw, ImageFont
 import main
 
 FPS = 30
-CW, CH, FONT_PX = 9, 18, 15            # cell size and font size in pixels
-main.COLS, main.ROWS = 212, 60         # 1908 x 1080, padded to 1920 wide
+CW, CH, FONT_PX = 12, 24, 20           # cell size and font size in pixels (big enough to survive feed compression)
+main.COLS, main.ROWS = 160, 45         # 1920 x 1080
 OUT_W, OUT_H = 1920, 1080
 
 
 def glyph_atlas():
-    font = ImageFont.truetype("/System/Library/Fonts/Menlo.ttc", FONT_PX)
+    font = ImageFont.truetype("/System/Library/Fonts/Menlo.ttc", FONT_PX, index=1)  # bold
     ascent, descent = font.getmetrics()
     top = (CH - (ascent + descent)) // 2
     atlas = np.zeros((main.NR, CH, CW), np.float32)

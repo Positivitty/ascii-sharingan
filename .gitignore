@@ -4,3 +4,5 @@ __pycache__/
 .DS_Store
 # earlier experiments kept locally
 main_*.py
+# the reference picture is not mine to redistribute (see README)
+ref/
