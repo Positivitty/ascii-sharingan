@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+*.mp4
+.DS_Store
+# earlier experiments kept locally
+main_*.py
